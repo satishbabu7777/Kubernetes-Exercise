@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exercise-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: exercise
+  template:
+    metadata:
+      labels:
+        app: exercise
+    spec:
+      containers:
+      - name: exercise
+        image: satishbabu1989/exercise:1
+        ports:
+        - containerPort: 80
